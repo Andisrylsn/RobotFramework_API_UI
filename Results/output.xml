@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-01-31T11:37:02.670064" rpa="false" schemaversion="5">
+<suite id="s1" name="API" source="C:\Users\andis\PycharmProjects\SeleniumRobotFramework\api_test\API.robot">
+<test id="s1-t1" name="Get User List" line="17">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-01-31T11:37:02.811908" level="INFO">Creating Session using : alias=my_session, url=https://reqres.in/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>my_session</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-01-31T11:37:02.810891" elapsed="0.001017"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-01-31T11:37:02.970517" level="INFO">GET Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-01-31T11:37:02.970517" level="INFO">GET Response : url=https://reqres.in/api/users 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 31 Jan 2024 04:38:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1706623630&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=X9SzmahKGTCWs2cKmM%2B4OFKV2jHD1WesgkcdzdkgNz0%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1706623630&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=X9SzmahKGTCWs2cKmM%2B4OFKV2jHD1WesgkcdzdkgNz0%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '735', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '84df4478aa3c5fe7-SIN', 'Content-Encoding': 'gzip'} 
+ body={"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg time="2024-01-31T11:37:02.970517" level="INFO">C:\Users\andis\PycharmProjects\SeleniumRobotFramework\.venv\Lib\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'reqres.in'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2024-01-31T11:37:02.972277" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>my_session</arg>
+<arg>/users</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-01-31T11:37:02.811908" elapsed="0.160369"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-31T11:37:02.975858" level="INFO">200</msg>
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-31T11:37:02.974804" elapsed="0.001054"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-31T11:37:02.976324" level="INFO">{"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}</msg>
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-31T11:37:02.976324" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-31T11:37:02.977397" level="INFO">"Andi Suryo Laksono"</msg>
+<arg>"Andi Suryo Laksono"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-31T11:37:02.977397" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-01-31T11:37:02.978398" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2024-01-31T11:37:02.977397" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2024-01-31T11:37:02.810891" elapsed="0.167735"/>
+</test>
+<test id="s1-t2" name="Positive Case" line="26">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-01-31T11:37:02.980626" level="INFO">&amp;{req_body} = { name=andi | job=software Quality Assurance }</msg>
+<var>&amp;{req_body}</var>
+<arg>name=andi</arg>
+<arg>job=software Quality Assurance</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-01-31T11:37:02.979626" elapsed="0.001000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-01-31T11:37:03.629086" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '53', 'Content-Type': 'application/json'} 
+ body=b'{"name": "andi", "job": "software Quality Assurance"}' 
+ </msg>
+<msg time="2024-01-31T11:37:03.629086" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Wed, 31 Jan 2024 04:38:51 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '100', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1706675931&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=61ExC2x1BX9qHCwpsfwbB0ka7U8Ru4oJsIr%2Bor4poNI%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1706675931&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=61ExC2x1BX9qHCwpsfwbB0ka7U8Ru4oJsIr%2Bor4poNI%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"64-Y3TgptsaymyYZ8sOzBq9HyOAQpk"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '84df447a9ba26bd6-SIN'} 
+ body={"name":"andi","job":"software Quality Assurance","id":"499","createdAt":"2024-01-31T04:38:51.556Z"} 
+ </msg>
+<msg time="2024-01-31T11:37:03.629086" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>${base_url}/users</arg>
+<arg>json=${req_body}</arg>
+<arg>expected_status=201</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-01-31T11:37:02.980898" elapsed="0.648188"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-31T11:37:03.631265" level="INFO">{'name': 'andi', 'job': 'software Quality Assurance', 'id': '499', 'createdAt': '2024-01-31T04:38:51.556Z'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-31T11:37:03.630003" elapsed="0.002142"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<msg time="2024-01-31T11:37:03.633173" level="INFO">False</msg>
+<arg>${response.json()}</arg>
+<arg>id</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-01-31T11:37:03.632145" elapsed="0.001028"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-01-31T11:37:03.635280" level="INFO">${name} = andi</msg>
+<var>${name}</var>
+<arg>${response.json()}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-01-31T11:37:03.634279" elapsed="0.001001"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${expectedname}</arg>
+<arg>${name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-01-31T11:37:03.635280" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-01-31T11:37:02.979626" elapsed="0.656682"/>
+</test>
+<test id="s1-t3" name="Negative Case: Missing Request Body Fields" line="36">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-01-31T11:37:03.637412" level="INFO">&amp;{req_body} = { }</msg>
+<var>&amp;{req_body}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-01-31T11:37:03.637412" elapsed="0.000000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-01-31T11:37:04.284345" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2', 'Content-Type': 'application/json'} 
+ body=b'{}' 
+ </msg>
+<msg time="2024-01-31T11:37:04.284345" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Wed, 31 Jan 2024 04:38:52 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1706675932&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=SRuOHCchIJu%2BBKOr7Ynza2add4%2BvPqR2nBsrHWn9zAw%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1706675932&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=SRuOHCchIJu%2BBKOr7Ynza2add4%2BvPqR2nBsrHWn9zAw%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"33-s5rP5Ye05jG1YPMnUgbkMLl75DM"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '84df447e9b7e5ff6-SIN'} 
+ body={"id":"101","createdAt":"2024-01-31T04:38:52.207Z"} 
+ </msg>
+<msg time="2024-01-31T11:37:04.284345" level="INFO">${response_fail} = &lt;Response [201]&gt;</msg>
+<var>${response_fail}</var>
+<arg>${base_url}/users</arg>
+<arg>json=${req_body}</arg>
+<arg>expected_status=201</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-01-31T11:37:03.637412" elapsed="0.646933"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-31T11:37:04.286483" level="INFO">{'id': '101', 'createdAt': '2024-01-31T04:38:52.207Z'}</msg>
+<arg>${response_fail.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-31T11:37:04.285406" elapsed="0.001077"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<msg time="2024-01-31T11:37:04.288660" level="INFO">False</msg>
+<arg>${response_fail.json()}</arg>
+<arg>id</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-01-31T11:37:04.287616" elapsed="0.001044"/>
+</kw>
+<kw name="Dictionary Should Not Contain Key" owner="Collections">
+<msg time="2024-01-31T11:37:04.289718" level="INFO">False</msg>
+<arg>${response_fail.json()}</arg>
+<arg>name</arg>
+<doc>Fails if ``key`` is found from ``dictionary``.</doc>
+<status status="PASS" start="2024-01-31T11:37:04.288660" elapsed="0.001058"/>
+</kw>
+<status status="PASS" start="2024-01-31T11:37:03.636308" elapsed="0.654455"/>
+</test>
+<test id="s1-t4" name="Negative Case: Missing Response" line="44">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-01-31T11:37:04.292893" level="INFO">&amp;{req_body} = { name=andi | job=software Quality Assurance }</msg>
+<var>&amp;{req_body}</var>
+<arg>name=andi</arg>
+<arg>job=software Quality Assurance</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-01-31T11:37:04.291787" elapsed="0.001106"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-01-31T11:37:04.928566" level="INFO">POST Request : url=https://reqres.in/api/invalid-endpoint 
+ path_url=/api/invalid-endpoint 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '53', 'Content-Type': 'application/json'} 
+ body=b'{"name": "andi", "job": "software Quality Assurance"}' 
+ </msg>
+<msg time="2024-01-31T11:37:04.928566" level="INFO">POST Response : url=https://reqres.in/api/invalid-endpoint 
+ status=201, reason=Created 
+ headers={'Date': 'Wed, 31 Jan 2024 04:38:52 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '100', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1706675932&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=SRuOHCchIJu%2BBKOr7Ynza2add4%2BvPqR2nBsrHWn9zAw%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1706675932&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=SRuOHCchIJu%2BBKOr7Ynza2add4%2BvPqR2nBsrHWn9zAw%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"64-sxGWD9zSSpt4WRmrR7p0cy3DZg4"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '84df4482be1d6011-SIN'} 
+ body={"name":"andi","job":"software Quality Assurance","id":"866","createdAt":"2024-01-31T04:38:52.858Z"} 
+ </msg>
+<msg time="2024-01-31T11:37:04.929615" level="FAIL">Url: https://reqres.in/api/invalid-endpoint Expected status: 201 != 400</msg>
+<var>${response}</var>
+<arg>${base_url}/invalid-endpoint</arg>
+<arg>json=${req_body}</arg>
+<arg>expected_status=400</arg>
+<doc>Sends a POST request.</doc>
+<status status="FAIL" start="2024-01-31T11:37:04.292893" elapsed="0.672651">Url: https://reqres.in/api/invalid-endpoint Expected status: 201 != 400</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-01-31T11:37:04.966563" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${response.json()}</arg>
+<arg>id</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="NOT RUN" start="2024-01-31T11:37:04.966632" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<var>${name}</var>
+<arg>${response.json()}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="NOT RUN" start="2024-01-31T11:37:04.966632" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${expectedname}</arg>
+<arg>${name}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2024-01-31T11:37:04.966632" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-01-31T11:37:04.291787" elapsed="0.674845">Url: https://reqres.in/api/invalid-endpoint Expected status: 201 != 400</status>
+</test>
+<test id="s1-t5" name="Negative Case: Response Not Equals with Request" line="55">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-01-31T11:37:04.967649" level="INFO">&amp;{req_body} = { name=joko | job=software Quality Assurance }</msg>
+<var>&amp;{req_body}</var>
+<arg>name=joko</arg>
+<arg>job=software Quality Assurance</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-01-31T11:37:04.967649" elapsed="0.000000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-01-31T11:37:05.622837" level="INFO">POST Request : url=https://reqres.in/api/invalid-endpoint 
+ path_url=/api/invalid-endpoint 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '53', 'Content-Type': 'application/json'} 
+ body=b'{"name": "joko", "job": "software Quality Assurance"}' 
+ </msg>
+<msg time="2024-01-31T11:37:05.623917" level="INFO">POST Response : url=https://reqres.in/api/invalid-endpoint 
+ status=201, reason=Created 
+ headers={'Date': 'Wed, 31 Jan 2024 04:38:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '100', 'Connection': 'keep-alive', 'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1706675933&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=G5uFILGoLk3nb3QiwjXKpGLvqnCMzofJcSzq%2BG6jOj4%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1706675933&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;s=G5uFILGoLk3nb3QiwjXKpGLvqnCMzofJcSzq%2BG6jOj4%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"64-tsACw9d6CxX39eTswG7iMY/w52I"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Server': 'cloudflare', 'CF-RAY': '84df4486edd73da7-SIN'} 
+ body={"name":"joko","job":"software Quality Assurance","id":"216","createdAt":"2024-01-31T04:38:53.526Z"} 
+ </msg>
+<msg time="2024-01-31T11:37:05.623917" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>${base_url}/invalid-endpoint</arg>
+<arg>json=${req_body}</arg>
+<arg>expected_status=201</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-01-31T11:37:04.967649" elapsed="0.656268"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-31T11:37:05.626098" level="INFO">{'name': 'joko', 'job': 'software Quality Assurance', 'id': '216', 'createdAt': '2024-01-31T04:38:53.526Z'}</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-31T11:37:05.624991" elapsed="0.001107"/>
+</kw>
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<msg time="2024-01-31T11:37:05.627421" level="INFO">False</msg>
+<arg>${response.json()}</arg>
+<arg>id</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-01-31T11:37:05.626098" elapsed="0.001323"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2024-01-31T11:37:05.628425" level="INFO">${name} = joko</msg>
+<var>${name}</var>
+<arg>${response.json()}</arg>
+<arg>name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2024-01-31T11:37:05.628425" elapsed="0.001048"/>
+</kw>
+<kw name="Should Not Be Equal As Strings" owner="BuiltIn">
+<arg>${expectedname}</arg>
+<arg>${name}</arg>
+<doc>Fails if objects are equal after converting them to strings.</doc>
+<status status="PASS" start="2024-01-31T11:37:05.629473" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-01-31T11:37:04.967649" elapsed="0.661824"/>
+</test>
+<doc>Robot Framework API Automation</doc>
+<status status="FAIL" start="2024-01-31T11:37:02.671592" elapsed="2.959970"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="1" skip="0" id="s1" name="API">API</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

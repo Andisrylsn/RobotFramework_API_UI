@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-01-31T09:24:50.407325" rpa="false" schemaversion="5">
+<suite id="s1" name="Looping" source="C:\Users\andis\PycharmProjects\SeleniumRobotFramework\test\Looping.robot">
+<test id="s1-t1" name="Loop With Range" line="21">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-31T09:24:50.520484" level="INFO">i adalah 0</msg>
+<arg>i adalah ${i}</arg>
+<arg>console=${True}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-31T09:24:50.520484" elapsed="0.003389"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-01-31T09:24:50.519019" elapsed="0.004854"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-31T09:24:50.525113" level="INFO">i adalah 1</msg>
+<arg>i adalah ${i}</arg>
+<arg>console=${True}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-31T09:24:50.525113" elapsed="0.001005"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-01-31T09:24:50.524929" elapsed="0.001337"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-01-31T09:24:50.527586" level="INFO">i adalah 2</msg>
+<arg>i adalah ${i}</arg>
+<arg>console=${True}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-01-31T09:24:50.526266" elapsed="0.001320"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-01-31T09:24:50.526266" elapsed="0.001320"/>
+</iter>
+<var>${i}</var>
+<value>3</value>
+<status status="PASS" start="2024-01-31T09:24:50.517661" elapsed="0.009925"/>
+</for>
+<status status="PASS" start="2024-01-31T09:24:50.517463" elapsed="0.010123"/>
+</test>
+<status status="PASS" start="2024-01-31T09:24:50.410545" elapsed="0.119292"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Looping">Looping</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-01-31T09:24:50.389650" level="WARN">Error in file 'C:\Users\andis\PycharmProjects\SeleniumRobotFramework\test\Looping.robot' on line 32: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
